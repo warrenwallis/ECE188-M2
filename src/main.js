@@ -13,6 +13,7 @@ $(document).ready(() => {
 
     // initialize the canvas
     $('#tbMain').css('background-color', '#eeeeee');
+    TINYTYPE.showUI();
 
     // add input event handlers
     $('#button0').on('click', TINYTYPE.clickButton0);
@@ -47,10 +48,18 @@ $(document).ready(() => {
 // have hard mappings to buttons and choos which mapping to show based on window
 // 0 = aeiou, a, b, g, l, q, v; 1 = bcdf, e, c, h, m, r, w; 2 = ghjk, i, d, j, n, s, x; 3 = lmnp, o, f, k, p, t, z; 4 = qrst, u, back; 5 = vwxz, y; 6 = space; 7 = delete
 
-TINYTYPE.showUI = function (e) {
+TINYTYPE.showUI = function () {
+    console.log('called showUI function');
     switch(page) {
         case 0:
-            $('#button0').prop('value', 'aeiouy');
+            console.log('page == 0');
+            $('#button0').text('AEIOUY');
+            $('#button1').text('BCDF');
+            $('#button2').text('GHJK');
+            $('#button3').text('LMNP');
+            $('#button4').text('QRST');
+            $('#button5').text('VWXZ');
+            break;
     }
 }
 
