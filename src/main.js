@@ -2,85 +2,26 @@
 //
 //
 
-var ISKETCH = ISKETCH || {}
+var TINYTYPE = TINYTYPE || {}
 
 $(document).ready(() => {
     //
     //  TIP: how you print information
     //
-    console.log('Welcome to iSketch!')
+    console.log('Welcome to TINYTYPE!')
 
     // initialize the canvas
     $('#tbMain').css('background-color', '#eeeeee');
 
     // add input event handlers
-    $('#button0').on('click', function() {
-        console.log('Button0');
-    });
-    $('#button1').on('click', );
+    $('#cvsMain').on('mousedown', TINYTYPE.canvasMouseDown);
+    $('#cvsMain').on('mouseup', TINYTYPE.canvasMouseUp);
 })
 
 //
 //
 //
-ISKETCH.canvasMouseDown = function (e) {
-    ISKETCH.context.clearRect(0, 0, $('#cvsMain').width(), $('#cvsMain').height());
-    ISKETCH.context.beginPath();
-
-    let rect = $('#cvsMain')[0].getBoundingClientRect();
-    let x = e.clientX - rect.left, y = e.clientY - rect.top
-    ISKETCH.context.moveTo(x, y);
-    ISKETCH.context.stroke();
-
-    ISKETCH.isDragging = true;
-
-    // -------------------------------------------------------------------------------
-    // create an empty array to store the user's mouse coordinates
-    //
-    ISKETCH.coords = []
-    //
-    // TODO: add the mouse down coordinates to this array
-    // TIP: array.push(element)
-    //
-    let coord = {x: undefined, y: undefined}
-
-
-    // -------------------------------------------------------------------------------
-}
-
-//
-//
-//
-ISKETCH.canvasMouseMove = function (e) {
-    if (!ISKETCH.isDragging) return;
-
-    let rect = $('#cvsMain')[0].getBoundingClientRect();
-    let x = e.clientX - rect.left, y = e.clientY - rect.top
-    ISKETCH.context.lineTo(x, y);
-    ISKETCH.context.moveTo(x, y);
-    ISKETCH.context.stroke();
-
-    // -------------------------------------------------------------------------------
-    // TODO: add the mouse move coordinates to the array
-
-
-
-    // -------------------------------------------------------------------------------
-}
-
-
-//
-//
-//
-ISKETCH.canvasMouseUp = function (e) {
-    ISKETCH.isDragging = false;
-    ISKETCH.context.closePath();
-
-    // -------------------------------------------------------------------------------
-    // TODO: add the mouse up coordinates to the array
-
-    // TODO: print the array
-    
-    // -------------------------------------------------------------------------------
-}
-
+// function for updating buttons based on what window the user is in
+// 0 = main, 1 = aeiouy, 2 = bcdf, 3 = ghjk, 4 = lmnp, 5 = qrst, 6 = vwxz 
+// have hard mappings to buttons and choos which mapping to show based on window
+// 0 = aeiou, a, b, g, l, q, v; 1 = bcdf, e, c, h, m, r, w; 2 = ghjk, i, d, j, n, s, x; 3 = lmnp, o, f, k, p, t, z; 4 = qrst, u; 5 = vwxz, y; 6 = space; 7 = delete
