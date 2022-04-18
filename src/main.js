@@ -17,27 +17,13 @@ $(document).ready(() => {
 
     // add input event handlers
     $('#button0').on('click', TINYTYPE.clickButton0);
-    $('#button1').on('click', function(){
-        console.log('clicked button1');
-    });
-    $('#button2').on('click', function(){
-        console.log('clicked button2');
-    });
-    $('#button3').on('click', function(){
-        console.log('clicked button3');
-    });
-    $('#button4').on('click', function(){
-        console.log('clicked button4');
-    });
-    $('#button5').on('click', function(){
-        console.log('clicked button5');
-    });
-    $('#button6').on('click', function(){
-        console.log('clicked button6');
-    });
-    $('#button7').on('click', function(){
-        console.log('clicked 7');
-    });
+    $('#button1').on('click', TINYTYPE.clickButton1);
+    $('#button2').on('click', TINYTYPE.clickButton2);
+    $('#button3').on('click', TINYTYPE.clickButton3);
+    $('#button4').on('click', TINYTYPE.clickButton4);
+    $('#button5').on('click', TINYTYPE.clickButton5);
+    $('#button6').on('click', TINYTYPE.clickButton6);
+    $('#button7').on('click', TINYTYPE.clickButton7);
 })
 
 //
@@ -122,8 +108,78 @@ TINYTYPE.clickButton0 = function (e) {
         case 0:
             page = 1;
             break;
-        case 1:
-            $('#textbox').val($('#textbox').val() + $('#button0').val());
+        default:
+            $('#textbox').val($('#textbox').val() + $('#button0').text());
+            page = 0;
+            break;
+    }
+    
+    TINYTYPE.showUI();
+}
+
+TINYTYPE.clickButton1 = function (e) {
+    switch(page) {
+        case 0:
+            page = 2;
+            break;
+        default:
+            $('#textbox').val($('#textbox').val() + $('#button1').text());
+            page = 0;
+            break;
+    }
+    
+    TINYTYPE.showUI();
+}
+
+TINYTYPE.clickButton2 = function (e) {
+    switch(page) {
+        case 0:
+            page = 3;
+            break;
+        default:
+            $('#textbox').val($('#textbox').val() + $('#button2').text());
+            page = 0;
+            break;
+    }
+    
+    TINYTYPE.showUI();
+}
+
+TINYTYPE.clickButton3 = function (e) {
+    switch(page) {
+        case 0:
+            page = 4;
+            break;
+        default:
+            $('#textbox').val($('#textbox').val() + $('#button3').text());
+            page = 0;
+            break;
+    }
+    
+    TINYTYPE.showUI();
+}
+
+TINYTYPE.clickButton4 = function (e) {
+    switch(page) {
+        case 0:
+            page = 5;
+            break;
+        default:
+            $('#textbox').val($('#textbox').val() + $('#button4').text());
+            page = 0;
+            break;
+    }
+    
+    TINYTYPE.showUI();
+}
+
+TINYTYPE.clickButton5 = function (e) {
+    switch(page) {
+        case 0:
+            page = 6;
+            break;
+        default:
+            $('#textbox').val($('#textbox').val() + $('#button5').text());
             page = 0;
             break;
     }
