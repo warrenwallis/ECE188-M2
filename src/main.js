@@ -164,8 +164,10 @@ TINYTYPE.clickButton4 = function (e) {
         case 0:
             page = 5;
             break;
-        default:
+        case 1:
             $('#textbox').val($('#textbox').val() + $('#button4').text());
+            page = 0;
+        default:
             page = 0;
             break;
     }
@@ -178,11 +180,24 @@ TINYTYPE.clickButton5 = function (e) {
         case 0:
             page = 6;
             break;
-        default:
+        case 1:
             $('#textbox').val($('#textbox').val() + $('#button5').text());
             page = 0;
+        default:
             break;
     }
     
+    TINYTYPE.showUI();
+}
+
+TINYTYPE.clickButton6 = function (e) {
+    $('#textbox').val($('#textbox').val() + ' ');
+    TINYTYPE.showUI();
+}
+
+TINYTYPE.clickButton7 = function (e) {
+    let result = $('#textbox').val();
+    let size = result.length;
+    $('#textbox').val(result.substring(0, size - 1));
     TINYTYPE.showUI();
 }
