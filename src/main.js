@@ -14,8 +14,9 @@ $(document).ready(() => {
     $('#tbMain').css('background-color', '#eeeeee');
 
     // add input event handlers
-    $('#cvsMain').on('mousedown', TINYTYPE.canvasMouseDown);
-    $('#cvsMain').on('mouseup', TINYTYPE.canvasMouseUp);
+    $('#button0').on('click', function(){
+        console.log('clicked button0');
+    });
 })
 
 //
