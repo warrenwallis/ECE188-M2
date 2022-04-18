@@ -11,17 +11,10 @@ $(document).ready(() => {
     console.log('Welcome to iSketch!')
 
     // initialize the canvas
-    $('#cvsMain')[0].width = 800;
-    $('#cvsMain')[0].height = 500;
-    $('#cvsMain').css('background-color', '#eeeeee');
-    ISKETCH.context = $('#cvsMain')[0].getContext('2d');
-    ISKETCH.context.strokeStyle = "#df4b26";
-    ISKETCH.context.lineJoin = "round";
-    ISKETCH.context.lineWidth = 5;
+    $('#tbMain').css('background-color', '#eeeeee');
 
     // add input event handlers
     $('#cvsMain').on('mousedown', ISKETCH.canvasMouseDown);
-    $('#cvsMain').on('mousemove', ISKETCH.canvasMouseMove);
     $('#cvsMain').on('mouseup', ISKETCH.canvasMouseUp);
 })
 
