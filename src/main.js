@@ -68,6 +68,52 @@ TINYTYPE.showUI = function () {
             $('#button3').text('O');
             $('#button4').text('U');
             $('#button5').text('Y');
+            break;
+        case 2:
+            console.log('page == 2');
+            $('#button0').text('B');
+            $('#button1').text('C');
+            $('#button2').text('D');
+            $('#button3').text('F');
+            $('#button4').text('BACK');
+            $('#button5').text('');
+            break;
+        case 3:
+            console.log('page == 3');
+            $('#button0').text('G');
+            $('#button1').text('H');
+            $('#button2').text('J');
+            $('#button3').text('K');
+            $('#button4').text('BACK');
+            $('#button5').text('');
+            break;
+        case 4:
+            console.log('page == 4');
+            $('#button0').text('L');
+            $('#button1').text('M');
+            $('#button2').text('M');
+            $('#button3').text('P');
+            $('#button4').text('BACK');
+            $('#button5').text('');
+            break;
+        case 5:
+            console.log('page == 5');
+            $('#button0').text('Q');
+            $('#button1').text('R');
+            $('#button2').text('S');
+            $('#button3').text('T');
+            $('#button4').text('BACK');
+            $('#button5').text('');
+            break;
+        case 6:
+            console.log('page == 6');
+            $('#button0').text('V');
+            $('#button1').text('W');
+            $('#button2').text('X');
+            $('#button3').text('Z');
+            $('#button4').text('BACK');
+            $('#button5').text('');
+            break;            
     }
 }
 
@@ -77,5 +123,10 @@ TINYTYPE.clickButton0 = function (e) {
             page = 1;
             TINYTYPE.showUI();
             break;
+        case 1:
+            $('#textbox').val($('#textbox').val() + $('#button0'));
+            break;
+        page = 0;
+        TINYTYPE.showUI();
     }
 }
