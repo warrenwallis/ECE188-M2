@@ -60,9 +60,22 @@ TINYTYPE.showUI = function () {
             $('#button4').text('QRST');
             $('#button5').text('VWXZ');
             break;
+        case 1:
+            console.log('page == 1');
+            $('#button0').text('A');
+            $('#button1').text('E');
+            $('#button2').text('I');
+            $('#button3').text('O');
+            $('#button4').text('U');
+            $('#button5').text('Y');
     }
 }
 
 TINYTYPE.clickButton0 = function (e) {
-    console.log('clicked button0 and used this function');
+    switch(page) {
+        case 0:
+            page = 1;
+            TINYTYPE.showUI();
+            break;
+    }
 }
