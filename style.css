@@ -1,3 +1,11 @@
+table {
+    table-layout: fixed;
+}
+
+td {
+    width: 25%; 
+}
+
 button {
     width: -webkit-fill-available;
 }
