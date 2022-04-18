@@ -14,8 +14,10 @@ $(document).ready(() => {
     $('#tbMain').css('background-color', '#eeeeee');
 
     // add input event handlers
-    $('#cvsMain').on('mousedown', ISKETCH.canvasMouseDown);
-    $('#cvsMain').on('mouseup', ISKETCH.canvasMouseUp);
+    $('#button0').on('click', function() {
+        console.log('Button0');
+    });
+    $('#button1').on('click', );
 })
 
 //
