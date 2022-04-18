@@ -121,12 +121,12 @@ TINYTYPE.clickButton0 = function (e) {
     switch(page) {
         case 0:
             page = 1;
-            TINYTYPE.showUI();
             break;
         case 1:
-            $('#textbox').val($('#textbox').val() + $('#button0'));
+            $('#textbox').val($('#textbox').val() + $('#button0').val());
+            page = 0;
             break;
-        page = 0;
-        TINYTYPE.showUI();
     }
+    
+    TINYTYPE.showUI();
 }
