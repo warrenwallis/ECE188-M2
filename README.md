@@ -1,5 +1,5 @@
-# iSketch
-ECE 188 HTML/JavaScript Educational Program
+# TinyType
+ECE 188 M1 Prototype
 
 ## How to run
 Open a terminal and switch to the local directory of this project, then
