@@ -1,10 +1,11 @@
-table {
-    max-width: 2cm;
-    width: 2cm;
+.keyboard {
     height: 2cm;
+    width: 2cm;
+    outline-color: tomato;
 }
 
 button {
-    width: -webkit-fill-available;
-    height:-webkit-fill-available;
+    font-size: 0.5rem;
+    padding: 0px;
+    margin: 0px;
 }

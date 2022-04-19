@@ -12,7 +12,6 @@ $(document).ready(() => {
     console.log('Welcome to TINYTYPE!')
 
     // initialize the canvas
-    $('#tbMain').css('background-color', '#eeeeee');
     TINYTYPE.showUI();
 
     // add input event handlers
@@ -40,11 +39,11 @@ TINYTYPE.showUI = function () {
         case 0:
             console.log('page == 0');
             $('#button0').text('AEIOUY');
-            $('#button1').text('BCDF');
-            $('#button2').text('GHJK');
-            $('#button3').text('LMNP');
-            $('#button4').text('QRST');
-            $('#button5').text('VWXZ');
+            $('#button1').text('.  BCDF  .');
+            $('#button2').text('. GHJK .');
+            $('#button3').text('. LMNP .');
+            $('#button4').text('. QRST .');
+            $('#button5').text('. VWXZ .');
             break;
         case 1:
             console.log('page == 1');
