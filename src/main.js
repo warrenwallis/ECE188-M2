@@ -100,6 +100,7 @@ TINYTYPE.showUI = function () {
             $('#button5').text('');
             break;            
     }
+    $('#textbox').focus();
 }
 
 TINYTYPE.clickButton0 = function (e) {
