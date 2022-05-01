@@ -3,7 +3,7 @@
 //
 
 var TINYTYPE = TINYTYPE || {}
-let page = 0;
+let page = 0, isDown, points, r, g, rc;
 
 $(document).ready(() => {
     //
@@ -23,6 +23,9 @@ $(document).ready(() => {
     $('#button5').on('click', TINYTYPE.clickButton5);
     $('#button6').on('click', TINYTYPE.clickButton6);
     $('#button7').on('click', TINYTYPE.clickButton7);
+    $('#myCanvas').on('mousedown', TINYTYPE.canvasMouseDown);
+    $('#myCanvas').on('mousemove', TINYTYPE.canvasMouseMove);
+    $('#myCanvas').on('mouseup', TINYTYPE.canvasMouseUp);
 })
 
 //
@@ -64,7 +67,7 @@ TINYTYPE.showUI = function () {
             $('#button2').text('D');
             $('#button3').text('F');
             $('#button4').text('BACK');
-            $('#button5').text('');
+            $('#button5').text('EMOJI');
             break;
         case 3:
             console.log('page == 3');
@@ -101,7 +104,18 @@ TINYTYPE.showUI = function () {
             $('#button3').text('Z');
             $('#button4').text('BACK');
             $('#button5').text('');
-            break;            
+            break;
+        case 7:
+            console.log('page == 7');
+            $('#button0').hide();
+            $('#button1').hide();
+            $('#button2').hide();
+            $('#button3').hide();
+            $('#button4').hide();
+            $('#button5').text('BACK');
+            $('#myCanvas').css('display', 'inherit');
+            initialize();
+            break;
     }
     $('#textbox').focus();
 }
@@ -186,6 +200,20 @@ TINYTYPE.clickButton5 = function (e) {
         case 1:
             $('#textbox').val($('#textbox').val() + $('#button5').text());
             page = 0;
+            break;
+        case 2:
+            console.log("its emoji time!");
+            page = 7;
+            break;
+        case 7:
+            $('#button0').show();
+            $('#button1').show();
+            $('#button2').show();
+            $('#button3').show();
+            $('#button4').show();
+            $('#myCanvas').hide();
+            page = 2;
+            break;
         default:
             break;
     }
@@ -204,3 +232,4 @@ TINYTYPE.clickButton7 = function (e) {
     $('#textbox').val(result.substring(0, size - 1));
     TINYTYPE.showUI();
 }
+
