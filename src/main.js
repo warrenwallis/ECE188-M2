@@ -32,6 +32,9 @@ $(document).ready(() => {
 // 0 = main, 1 = aeiouy, 2 = bcdf, 3 = ghjk, 4 = lmnp, 5 = qrst, 6 = vwxz 
 // have hard mappings to buttons and choos which mapping to show based on window
 // 0 = aeiou, a, b, g, l, q, v; 1 = bcdf, e, c, h, m, r, w; 2 = ghjk, i, d, j, n, s, x; 3 = lmnp, o, f, k, p, t, z; 4 = qrst, u, back; 5 = vwxz, y; 6 = space; 7 = delete
+//
+// with the addition of emoji's, have a new window (8) that hosts the canvas and hides all the button except back, space, delete
+// keep pre-defined objects for emoji, so map triangle to emoji1, x to emoji2, rectangle to emoji3, circle to emoji4, check to emoji5
 
 TINYTYPE.showUI = function () {
     console.log('called showUI function');
