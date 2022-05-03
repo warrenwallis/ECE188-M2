@@ -45,7 +45,7 @@ TINYTYPE.showUI = function () {
         case 0:
             console.log('page == 0');
             $('#button0').text('AEIOUY');
-            $('#button1').text('.  BCDF  .');
+            $('#button1').text('BCDF' + String.fromCodePoint(0x1F602));
             $('#button2').text('. GHJK .');
             $('#button3').text('. LMNP .');
             $('#button4').text('. QRST .');
