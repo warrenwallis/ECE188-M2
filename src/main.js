@@ -113,7 +113,7 @@ TINYTYPE.showUI = function () {
             $('#button3').hide();
             $('#button4').hide();
             $('#button5').text('BACK');
-            $('#myCanvas').css('display', 'inherit');
+            $('#myCanvas').show();
             initialize();
             break;
     }
@@ -231,5 +231,72 @@ TINYTYPE.clickButton7 = function (e) {
     let size = result.length;
     $('#textbox').val(result.substring(0, size - 1));
     TINYTYPE.showUI();
+}
+
+function initialize() {
+    $('#myCanvas')[0].width = 75;
+    $('#myCanvas')[0].height = 40;
+    $('#myCanvas').css('background-color', '#eeeeee');
+    TINYTYPE.context = $('#myCanvas')[0].getContext('2d');
+    TINYTYPE.context.strokeStyle = "#df4b26";
+    TINYTYPE.context.lineJoin = "round";
+    TINYTYPE.context.lineWidth = 2;
+
+    points = new Array();
+    r = new DollarRecognizer();
+}
+
+TINYTYPE.canvasMouseDown = function (e) {
+    TINYTYPE.context.clearRect(0, 0, $('#myCanvas').width(), $('#myCanvas').height());
+    TINYTYPE.context.beginPath();
+
+    let rect = $('#myCanvas')[0].getBoundingClientRect();
+    let x = e.clientX - rect.left, y = e.clientY - rect.top;
+    TINYTYPE.context.moveTo(x, y);
+    TINYTYPE.context.stroke();
+
+    TINYTYPE.isDragging = true;
+
+    points.length = 1;
+    points[0] = new Point(x, y);
+}
+
+TINYTYPE.canvasMouseMove = function (e) {
+    if (!TINYTYPE.isDragging) return;
+
+    let rect = $('#myCanvas')[0].getBoundingClientRect();
+    let x = e.clientX - rect.left, y = e.clientY - rect.top;
+    TINYTYPE.context.lineTo(x, y);
+    TINYTYPE.context.moveTo(x, y);
+    TINYTYPE.context.stroke();
+
+    points[points.length] = new Point(x, y);
+}
+
+TINYTYPE.canvasMouseUp = function (e) {
+    TINYTYPE.isDragging = false;
+    TINYTYPE.context.closePath();
+
+    var result = r.Recognize(points, false);
+    console.log(result.Name);
+    var write;
+    switch (result.Name) {
+        case "triangle":
+            write = String.fromCodePoint(0x1F602);
+            break;
+        case "x":
+            write = String.fromCodePoint(0x1F48B);
+            break;
+        case "rectangle":
+            write = String.fromCodePoint(0x1F497);
+            break;
+        case "circle":
+            write = String.fromCodePoint(0x1F351);
+            break;
+        case "check":
+            write = String.fromCodePoint(0x1F346);
+            break;
+    }
+    $('#textbox').val($('#textbox').val() + write);
 }
 

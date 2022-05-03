@@ -109,7 +109,7 @@ function Result(name, score, ms) // constructor
 //
 // DollarRecognizer constants
 //
-const NumUnistrokes = 16;
+const NumUnistrokes = 5;
 const NumPoints = 64;
 const SquareSize = 250.0;
 const Origin = new Point(0,0);

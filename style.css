@@ -35,7 +35,5 @@ button {
 
 #myCanvas {
     display: none;
-    max-width: 100%;
-    max-height: 33%;
-    margin-top: 4px;
+    margin-bottom: -4px;
 }
